@@ -88,8 +88,11 @@ img {
 
 .main-header.scrolled {
     padding: 10px 0;
-    background: var(--deep-navy);
+    background: rgba(34, 34, 50, 0.85);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
     color: var(--white);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
 }
 
 .header-content {
@@ -340,9 +343,21 @@ img {
     background: rgba(0,0,0,0.6);
 }
 
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
 .hero-content {
     position: relative;
     z-index: 1;
+    animation: fadeInUp 0.9s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
 }
 
 .hero-content h2 {
@@ -371,19 +386,23 @@ img {
     padding: 12px 25px;
     font-size: 14px;
     font-weight: 600;
-    border-radius: 4px;
+    border-radius: 6px;
     cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 
 .btn-primary {
     background: var(--primary-red);
     color: var(--white);
     border: 2px solid var(--primary-red);
+    box-shadow: 0 4px 10px rgba(219, 38, 31, 0.2);
 }
 
 .btn-primary:hover {
     background: #bd1f1a;
     border-color: #bd1f1a;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(219, 38, 31, 0.4);
 }
 
 .btn-outline {
@@ -396,6 +415,8 @@ img {
 .btn-outline:hover {
     background: var(--white);
     color: var(--text-main);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(255, 255, 255, 0.25);
 }
 
 /* Section Common */
@@ -441,7 +462,7 @@ section {
 .blood-table th {
     background: var(--primary-red);
     color: var(--white);
-    padding: 15px;
+    padding: 8px 15px; /* Kurangi padding vertikal agar jarak tidak terlalu jauh */
     font-weight: 600;
 }
 
@@ -455,9 +476,26 @@ section {
 }
 
 .blood-table tr td:first-child {
-    text-align: left;
-    font-weight: 600;
-    background: #fafafa;
+    text-align: center; /* Adjust if it's not the first column with names anymore */
+}
+
+.stock-count {
+    display: inline-block;
+    min-width: 50px;
+    padding: 8px 15px;
+    background: #fff;
+    color: var(--primary-red);
+    font-weight: 700;
+    font-size: 1.2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.06);
+    border: 1px solid var(--border-color);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.stock-count:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(219,38,31,0.15);
 }
 
 /* Services */
@@ -537,20 +575,32 @@ section {
 
 .news-card {
     background: var(--white);
-    border-radius: 8px;
+    border-radius: 12px;
     overflow: hidden;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1), box-shadow 0.4s ease;
+}
+
+.news-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.08);
 }
 
 .news-thumb {
     height: 200px;
     position: relative;
+    overflow: hidden;
 }
 
 .news-thumb img {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    transition: transform 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.news-card:hover .news-thumb img {
+    transform: scale(1.06);
 }
 
 .news-date {
@@ -735,6 +785,7 @@ section {
 .req-list {
     list-style: none;
     padding: 0;
+    counter-reset: req-counter;
 }
 
 .req-list li {
@@ -746,9 +797,10 @@ section {
 }
 
 .req-list li::before {
-    content: '\f00c';
-    font-family: 'Font Awesome 5 Free';
-    font-weight: 900;
+    counter-increment: req-counter;
+    content: counter(req-counter) ".";
+    font-family: inherit;
+    font-weight: 700;
     position: absolute;
     left: 0;
     color: var(--primary-red);
@@ -1031,5 +1083,85 @@ section {
 
     .top-bar {
         display: none;
+    }
+}
+
+/* Admin Layout Responsive */
+.admin-layout {
+    display: flex;
+    min-height: 100vh;
+    background: #f5f5f5;
+    flex-direction: row;
+}
+
+.admin-sidebar {
+    width: 250px;
+    background: #222232;
+    color: white;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.admin-main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 0;
+}
+
+.admin-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+@media (max-width: 768px) {
+    .admin-layout {
+        flex-direction: column;
+    }
+    
+    .admin-main {
+        padding-bottom: 70px; /* Space for bottom nav */
+    }
+
+    .admin-sidebar {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 70px;
+        padding: 0;
+        flex-direction: row;
+        z-index: 1000;
+        box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
+    }
+    
+    .admin-sidebar > div:first-child {
+        display: none; /* Hide the "PMI Admin" header in bottom nav */
+    }
+    
+    .admin-nav {
+        flex-direction: row;
+        width: 100%;
+        justify-content: space-around;
+        align-items: center;
+        gap: 0;
+    }
+    
+    .admin-nav a {
+        flex: 1;
+        text-align: center;
+        padding: 15px 5px !important;
+        font-size: 13px;
+        border-radius: 0 !important;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .admin-nav a[style*="background"] {
+        border-top: 3px solid var(--primary-red);
+        background: rgba(255,255,255,0.05) !important;
     }
 }

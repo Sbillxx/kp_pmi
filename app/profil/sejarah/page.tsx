@@ -1,3 +1,10 @@
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Sejarah - PMI Kota Tasikmalaya",
+  description: "Sejarah terbentuknya Palang Merah Indonesia (PMI) Kota Tasikmalaya sejak tahun 2001.",
+};
+
 export default function SejarahPage() {
   return (
     <>

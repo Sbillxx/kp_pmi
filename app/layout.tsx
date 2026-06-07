@@ -13,6 +13,7 @@ export const metadata: Metadata = {
   description: "Website resmi Palang Merah Indonesia Kota Tasikmalaya",
 };
 
+import ConditionalLayout from "@/components/LayoutElements";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
@@ -27,11 +28,9 @@ export default function RootLayout({
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
       </head>
       <body suppressHydrationWarning>
-        <div className="pmi-app">
-          <Header />
-          <main>{children}</main>
-          <Footer />
-        </div>
+        <ConditionalLayout header={<Header />} footer={<Footer />}>
+          {children}
+        </ConditionalLayout>
       </body>
     </html>
   );

@@ -1,3 +1,10 @@
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Visi & Misi - PMI Kota Tasikmalaya",
+  description: "Visi dan Misi Palang Merah Indonesia (PMI) Kota Tasikmalaya yang profesional, modern, dan berdaya saing.",
+};
+
 export default function VisiMisiPage() {
   return (
     <>

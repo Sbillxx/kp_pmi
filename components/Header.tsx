@@ -64,40 +64,27 @@ export default function Header() {
           <nav className="desktop-nav">
             <ul>
               <li><Link href="/" className={pathname === "/" ? "active" : ""}>Beranda</Link></li>
-              <li><a href="#">Donasi</a></li>
               <li>
-                <a href="#">Donor Darah <i className="fas fa-chevron-down"></i></a>
+                <Link href="/donor-darah/stok-darah">Donor Darah <i className="fas fa-chevron-down"></i></Link>
                 <ul className="dropdown-menu">
-                  <li><a href="#"><i className="fas fa-tint"></i> Stok Darah</a></li>
-                  <li><a href="#"><i className="fas fa-clipboard-check"></i> Prosedur Donor</a></li>
-                  <li><a href="#"><i className="fas fa-calendar-alt"></i> Jadwal Mobile Unit</a></li>
-                  <li><Link href="/#syarat-donor"><i className="fas fa-hand-holding-heart"></i> Penyelenggaraan Donor</Link></li>
-                  <li><a href="#"><i className="fas fa-award"></i> Pengajuan Piagam</a></li>
+                  <li><Link href="/donor-darah/stok-darah"><i className="fas fa-tint"></i> Stok Darah</Link></li>
+                  <li><Link href="/donor-darah/prosedur"><i className="fas fa-clipboard-check"></i> Prosedur Donor</Link></li>
                 </ul>
               </li>
+              <li><Link href="/unit">Unit</Link></li>
               <li>
-                <a href="#">Layanan <i className="fas fa-chevron-down"></i></a>
-                <ul className="dropdown-menu">
-                  <li><a href="#"><i className="fas fa-ambulance"></i> Ambulans</a></li>
-                  <li><a href="#"><i className="fas fa-cloud-showers-heavy"></i> Tanggap Bencana</a></li>
-                  <li><a href="#"><i className="fas fa-users"></i> Kemitraan</a></li>
-                  <li><a href="#"><i className="fas fa-graduation-cap"></i> Pelatihan</a></li>
-                  <li><a href="#"><i className="fas fa-bullhorn"></i> Pengaduan</a></li>
-                </ul>
-              </li>
-              <li>
-                <a href="#">Informasi Publik <i className="fas fa-chevron-down"></i></a>
+                <Link href="/profil/sejarah">Kemarkasan <i className="fas fa-chevron-down"></i></Link>
                 <ul className="dropdown-menu">
                   <li><Link href="/profil/sejarah"><i className="fas fa-history"></i> Sejarah PMI</Link></li>
                   <li><Link href="/profil/landasan-hukum"><i className="fas fa-gavel"></i> Landasan Hukum</Link></li>
                   <li><Link href="/profil/visi-misi"><i className="fas fa-bullseye"></i> Visi Misi</Link></li>
-                  <li><a href="#"><i className="fas fa-newspaper"></i> Berita</a></li>
-                  <li><a href="#"><i className="fas fa-sitemap"></i> Kepengurusan</a></li>
-                  <li><a href="#"><i className="fas fa-images"></i> Galeri</a></li>
+                  <li><Link href="/berita"><i className="fas fa-newspaper"></i> Berita</Link></li>
+                  <li><Link href="/profil/visi-misi"><i className="fas fa-sitemap"></i> Kepengurusan</Link></li>
+                  <li><Link href="/galeri"><i className="fas fa-images"></i> Galeri</Link></li>
                 </ul>
               </li>
-              <li><a href="#">Relawan</a></li>
-              <li><a href="#">Kontak</a></li>
+              {/* <li><Link href="/#syarat-donor">Relawan</Link></li> */}
+              <li><Link href="/#kontak">Kontak</Link></li>
             </ul>
           </nav>
           <button 
@@ -112,10 +99,10 @@ export default function Header() {
           </button>
         </div>
       </header>
-
+ 
       {/* Mobile Nav Overlay */}
       <div className={`mobile-overlay ${isMenuOpen ? 'active' : ''}`} onClick={toggleMenu}></div>
-
+ 
       {/* Mobile Nav Menu */}
       <nav className={`mobile-nav ${isMenuOpen ? 'active' : ''}`}>
         <div className="mobile-nav-header">
@@ -131,12 +118,11 @@ export default function Header() {
         </div>
         <ul>
           <li><Link href="/" className={pathname === "/" ? "active" : ""} onClick={toggleMenu}>Beranda</Link></li>
-          <li><a href="#" onClick={toggleMenu}>Donasi</a></li>
-          <li><a href="#" onClick={toggleMenu}>Donor Darah</a></li>
-          <li><a href="#" onClick={toggleMenu}>Layanan</a></li>
-          <li><a href="#" onClick={toggleMenu}>Informasi Publik</a></li>
-          <li><a href="#" onClick={toggleMenu}>Relawan</a></li>
-          <li><a href="#" onClick={toggleMenu}>Kontak</a></li>
+          <li><Link href="/#stok-darah" onClick={toggleMenu}>Donor Darah</Link></li>
+          <li><Link href="/unit" onClick={toggleMenu}>Unit</Link></li>
+          <li><Link href="/profil/sejarah" onClick={toggleMenu}>Kemarkasan</Link></li>
+          {/* <li><Link href="/#syarat-donor" onClick={toggleMenu}>Relawan</Link></li> */}
+          <li><Link href="/#kontak" onClick={toggleMenu}>Kontak</Link></li>
         </ul>
       </nav>
     </>
