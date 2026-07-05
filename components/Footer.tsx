@@ -45,7 +45,7 @@ export default async function Footer() {
         <div className="container">
           <div className="footer-grid">
             <div className="footer-col about-col">
-              <img src="/images/logo-pmi.png" alt="PMI Logo" className="footer-logo" />
+              <img src="/logo-pmi.png" alt="PMI Logo" className="footer-logo" />
               <p>
                 Palang Merah Indonesia (PMI) Kota Tasikmalaya merupakan organisasi kemanusiaan yang berstatus badan hukum, diundangkan dengan Undang-Undang nomor 1 tahun 2018 tentang Kepalangmerahan.
               </p>

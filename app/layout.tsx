@@ -11,6 +11,9 @@ const montserrat = Montserrat({
 export const metadata: Metadata = {
   title: "PMI Kota Tasikmalaya - Kemanusiaan Untuk Semua",
   description: "Website resmi Palang Merah Indonesia Kota Tasikmalaya",
+  icons: {
+    icon: "/logo-pmi.png"
+  }
 };
 
 import ConditionalLayout from "@/components/LayoutElements";

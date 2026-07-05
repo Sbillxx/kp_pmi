@@ -50,19 +50,17 @@ export default function LoginPage() {
       }}>
         <div style={{ textAlign: 'center', marginBottom: '30px' }}>
           <div style={{
-            background: 'var(--primary-red, #db261f)',
-            width: '60px',
+            background: 'transparent',
             height: '60px',
-            borderRadius: '50%',
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
             margin: '0 auto 15px'
           }}>
             <img 
-              src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c9/Logo_PMI.svg/1200px-Logo_PMI.svg.png" 
+              src="/logo-pmi.png" 
               alt="PMI Logo" 
-              style={{ height: '35px', filter: 'brightness(0) invert(1)' }} 
+              style={{ height: '50px', width: 'auto', objectFit: 'contain' }} 
             />
           </div>
           <h1 style={{ fontSize: '24px', fontWeight: 'bold', margin: 0, color: 'var(--deep-navy, #222232)' }}>Admin Login</h1>

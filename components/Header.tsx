@@ -21,11 +21,11 @@ export default function Header() {
 
     // Set date
     const now = new Date();
-    const options: Intl.DateTimeFormatOptions = { 
-      weekday: 'long', 
-      year: 'numeric', 
-      month: 'long', 
-      day: 'numeric' 
+    const options: Intl.DateTimeFormatOptions = {
+      weekday: 'long',
+      year: 'numeric',
+      month: 'long',
+      day: 'numeric'
     };
     setCurrentDate(now.toLocaleDateString('id-ID', options));
 
@@ -54,9 +54,9 @@ export default function Header() {
         <div className="container header-content">
           <Link href="/" className="logo-area">
             <div className="logo-box">
-              <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c9/Logo_PMI.svg/1200px-Logo_PMI.svg.png" alt="PMI Logo" style={{ filter: 'brightness(0) invert(1)' }} />
+              <img src="/logo-pmi.png" alt="PMI Logo" style={{ height: '40px', width: 'auto', objectFit: 'contain' }} />
             </div>
-            <div className="brand-text">
+            <div className="brand-text" style={{ display: 'none' }}>
               <h1>PMI KOTA TASIKMALAYA</h1>
               <p>Kemanusiaan Untuk Semua</p>
             </div>
@@ -87,8 +87,8 @@ export default function Header() {
               <li><Link href="/#kontak">Kontak</Link></li>
             </ul>
           </nav>
-          <button 
-            className="mobile-toggle" 
+          <button
+            className="mobile-toggle"
             onClick={(e) => {
               e.preventDefault();
               toggleMenu();
@@ -99,18 +99,18 @@ export default function Header() {
           </button>
         </div>
       </header>
- 
+
       {/* Mobile Nav Overlay */}
       <div className={`mobile-overlay ${isMenuOpen ? 'active' : ''}`} onClick={toggleMenu}></div>
- 
+
       {/* Mobile Nav Menu */}
       <nav className={`mobile-nav ${isMenuOpen ? 'active' : ''}`}>
         <div className="mobile-nav-header">
           <div className="logo-area">
-            <div className="logo-box" style={{ width: '40px', height: '40px' }}>
-              <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c9/Logo_PMI.svg/1200px-Logo_PMI.svg.png" alt="PMI Logo" style={{ height: '25px', filter: 'brightness(0) invert(1)' }} />
+            <div className="logo-box" style={{ width: 'auto', height: '40px' }}>
+              <img src="/logo-pmi.png" alt="PMI Logo" style={{ height: '70px', width: 'auto', objectFit: 'contain' }} />
             </div>
-            <div className="brand-text">
+            <div className="brand-text" style={{ display: 'none' }}>
               <h1 style={{ fontSize: '14px' }}>PMI TASIKMALAYA</h1>
             </div>
           </div>
