@@ -30,12 +30,9 @@ export default async function Footer() {
           <div className="cta-content">
             <h2>Mari Bergabung Menjadi Relawan Kemanusiaan!</h2>
             <div className="cta-btns">
-              <Link href="/relawan/daftar" className="btn btn-white">
-                Daftar Relawan
-              </Link>
-              <Link href="/donasi" className="btn btn-outline-white">
+              <a href="https://wa.me/628119022021" target="_blank" rel="noopener noreferrer" className="btn btn-outline-white">
                 Berdonasi
-              </Link>
+              </a>
             </div>
           </div>
         </div>
@@ -56,7 +53,7 @@ export default async function Footer() {
               <ul>
                 <li><Link href="/profil/sejarah">Sejarah PMI</Link></li>
                 <li><Link href="/profil/visi-misi">Visi & Misi</Link></li>
-                <li><Link href="/layanan/donor-darah">Info Donor Darah</Link></li>
+                <li><Link href="/donor-darah/stok-darah">Info Donor Darah</Link></li>
                 <li><Link href="/berita">Berita Terbaru</Link></li>
               </ul>
             </div>

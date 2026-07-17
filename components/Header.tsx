@@ -79,12 +79,12 @@ export default function Header() {
                   <li><Link href="/profil/landasan-hukum"><i className="fas fa-gavel"></i> Landasan Hukum</Link></li>
                   <li><Link href="/profil/visi-misi"><i className="fas fa-bullseye"></i> Visi Misi</Link></li>
                   <li><Link href="/berita"><i className="fas fa-newspaper"></i> Berita</Link></li>
-                  <li><Link href="/profil/visi-misi"><i className="fas fa-sitemap"></i> Kepengurusan</Link></li>
+                  <li><Link href="/profil/kepengurusan"><i className="fas fa-sitemap"></i> Kepengurusan</Link></li>
                   <li><Link href="/galeri"><i className="fas fa-images"></i> Galeri</Link></li>
                 </ul>
               </li>
               {/* <li><Link href="/#syarat-donor">Relawan</Link></li> */}
-              <li><Link href="/#kontak">Kontak</Link></li>
+              <li><a href="https://wa.me/628119022021" target="_blank" rel="noopener noreferrer">Kontak</a></li>
             </ul>
           </nav>
           <button
@@ -122,7 +122,7 @@ export default function Header() {
           <li><Link href="/unit" onClick={toggleMenu}>Unit</Link></li>
           <li><Link href="/profil/sejarah" onClick={toggleMenu}>Kemarkasan</Link></li>
           {/* <li><Link href="/#syarat-donor" onClick={toggleMenu}>Relawan</Link></li> */}
-          <li><Link href="/#kontak" onClick={toggleMenu}>Kontak</Link></li>
+          <li><a href="https://wa.me/628119022021" target="_blank" rel="noopener noreferrer" onClick={toggleMenu}>Kontak</a></li>
         </ul>
       </nav>
     </>

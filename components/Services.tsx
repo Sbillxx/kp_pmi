@@ -44,9 +44,6 @@ export default function Services() {
               </div>
               <h3>{service.title}</h3>
               <p>{service.description}</p>
-              <Link href={service.link} className="service-link">
-                Selengkapnya <i className="fas fa-arrow-right"></i>
-              </Link>
             </div>
           ))}
         </div>
